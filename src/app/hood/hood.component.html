@@ -8,7 +8,7 @@
             <small class="text-muted">Created on 12/2/2020 by Ken</small>
         </div>
         <div class="col-md-8">
-            <ul class="nav nav-tabs mb-3 mt-3 ml-3" id="pills-tab" role="tablist">
+            <ul class="nav nav-tabs mb-3 mt-3 d-flex" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Incidents</button>
                 </li>
@@ -18,15 +18,77 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-members-tab" data-bs-toggle="pill" data-bs-target="#pills-members" type="button" role="tab" aria-controls="pills-members" aria-selected="false">Members</button>
                 </li>
-                <li class="nav-item" role="presentation">
+                <li class="nav-item d-none d-sm-block" role="presentation">
                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Emergency Info</button>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quasi atque nam quam non! Laudantium accusamus architecto maxime beatae totam delectus? Impedit quisquam nam cum vel aperiam ipsa sit suscipit?</div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos sunt sapiente molestiae harum vero earum explicabo aliquid saepe beatae commodi dolores eligendi, praesentium veniam!</div>
-                <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">Members</div>
-                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae laborum culpa est natus. Ab deleniti vitae dolore necessitatibus fugit sed sit, dignissimos quasi praesentium tempora facere architecto. Enim, eum reprehenderit.</div>
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Yesterday 12:30pm
+                        </div>
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p style="font-size:3vmin" class="mb-3">A well-known quote, contained in a blockquote element.</p>
+                                <footer class="blockquote-footer"><cite title="Source Title">Certain user</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="../../assets/s-migaj-Yui5vfKHuzs-unsplash.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bidii carwash</h5>
+                                    <p class="card-text">We deal in making sure your car is sparkling clean</p>
+                                    <p class="card-text"><small class="text-muted">Serving the neighbourhood since 1919</small></p>
+                                </div>
+                                <div class="card-footer">
+                                    <p>Owner: name of user</p>
+                                    <p>Get in touch: o712345678</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="../../assets/s-migaj-Yui5vfKHuzs-unsplash.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bidii carwash</h5>
+                                    <p class="card-text">We deal in making sure your car is sparkling clean</p>
+                                    <p class="card-text"><small class="text-muted">Serving the neighbourhood since 1919</small></p>
+                                </div>
+                                <div class="card-footer">
+                                    <p>Owner: name of user</p>
+                                    <p>Get in touch: o712345678</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
+                    <div class="d-flex align-items-center">
+                        <img src="../../assets/s-migaj-Yui5vfKHuzs-unsplash.jpg" class="rounded" width="100px">
+                        <p style="font-size:4vmin" class="m-3">Name of member</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="border shadow m-3 p-2">
+                        <p><span class="m-1"><i class="bi bi-suit-heart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16">
+                            <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                          </svg></i></span>Health services</p>
+                        <p>0712345678</p>
+                    </div>
+                    <div class="border shadow m-3 p-2">
+                        <p><span class="m-1"><i class="bi bi-person-bounding-box"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                            <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                          </svg></i></span>Authorities</p>
+                        <p>0712345678</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
