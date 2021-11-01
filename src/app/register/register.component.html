@@ -1,21 +1,21 @@
 <div class="container-fluid d-flex justify-content-center mt-2">
     <div>
         <h2 class="animate__animated animate__bounce" style="font-size:6vmin;">Register to Watch</h2>
-        <form class="border shadow p-3">
+        <form #registerForm='ngForm' (ngSubmit)="registerUser()" class="border shadow p-3">
             <div class="mb-3">
                 <label class="form-label" for="email">Email</label>
-                <input type="email" id="email" class="form-control">
+                <input type="email" id="email" class="form-control" [(ngModel)]="email" name="email">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="username">Username</label>
-                <input type="username" id="username" class="form-control">
+                <input type="text" id="username" class="form-control" [(ngModel)]="username" name="username">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="password">Enter your password</label>
-                <input type="password" id="password" class="form-control">
+                <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password">
             </div>
             <div class="mb-3">
-                <button class="btn btn-outline-success">Register</button>
+                <button class="btn btn-outline-success" type="submit">Register</button>
             </div>
         </form>
     </div>
