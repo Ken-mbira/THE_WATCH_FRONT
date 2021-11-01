@@ -7,7 +7,7 @@ import { HoodComponent } from './hood/hood.component';
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'hood', component: HoodComponent}
+  { path: 'myhood', component: HoodComponent}
 ];
 
 @NgModule({
