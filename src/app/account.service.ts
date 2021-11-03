@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 import { environment } from 'src/environments/environment';
-import { ThisReceiver } from '@angular/compiler';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +31,7 @@ export class AccountService {
   }
 
   register(credentials:any){
-    this.http.post(`${environment.BASE_URL}/users`,credentials).subscribe(response=>{
+    this.http.post(`${environment.BASE_URL}/register`,credentials).subscribe(response=>{
       this.snackBar.open(`Congratulations ${credentials.get('username')}, your account was successfully created.`,"Log in")
       this.route.navigate([''])
     },error => {
