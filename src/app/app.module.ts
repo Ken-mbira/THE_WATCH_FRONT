@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { HoodComponent } from './hood/hood.component';
 import { NewHoodComponent } from './new-hood/new-hood.component';
+import { CreateHoodComponent } from './create-hood/create-hood.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { NewHoodComponent } from './new-hood/new-hood.component';
     RegisterComponent,
     HoodComponent,
     NewHoodComponent,
+    CreateHoodComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { NewHoodComponent } from './new-hood/new-hood.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

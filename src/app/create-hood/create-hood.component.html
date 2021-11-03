@@ -1,0 +1,36 @@
+<div class="container-fluid d-flex justify-content-center">
+    <form #newHoodForm="ngForm" (ngSubmit)="createHood()" class="border shadow-lg p-3 m-3">
+        <h3>Create your very own neighbourhood...</h3>
+        <div class="mb-3 mt-2">
+            <label for="name" class="form-label">Enter the neighbourhood's name</label>
+            <input class="form-control" id="name" name="name" [(ngModel)]="newHood.name" type="text">
+        </div>
+        <div class="mb-3">
+            <mat-form-field appearance="fill">
+                <mat-label>Choose your location</mat-label>
+                <mat-select [(ngModel)]="newHood.location" name="food">
+                    <mat-option *ngFor="let location of locations" [value]="location['id']">{{location['name']}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="mb-3">
+            <label for="slogan" class="form-label">Enter a slogan that your nighbours can identify with</label>
+            <input class="form-control" id="slogan" type="text" [(ngModel)]="newHood.slogan" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="police" class="form-label">Enter an Emergency number for the ops</label>
+            <input class="form-control" id="police" type="text" [(ngModel)]="newHood.policeContact" name="police">
+        </div>
+        <div class="mb-3">
+            <label for="hospital" class="form-label">Enter an Emergency number for the hospital in the area</label>
+            <input class="form-control" id="hospital" type="text" [(ngModel)]="newHood.hospitalContact" name="hospital">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Enter you neighbourhood logo</label>
+            <input type="file" class="form-control" id="image" name="image" (change)="onImageChange($event)">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-outline-primary">Submit</button>
+        </div>
+    </form>
+</div>
