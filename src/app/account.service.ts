@@ -17,11 +17,7 @@ export class AccountService {
     let headers = new HttpHeaders({
       'Authorization':`Token ${sessionStorage.getItem('token')}`
     })
-    this.http.get(`${environment.BASE_URL}/profile`,{'headers':headers}).subscribe(response=>{
-      console.log(response)  
-    },error => {
-      console.log(error)
-    })
+    return this.http.get(`${environment.BASE_URL}/profile`,{'headers':headers})
   }
 
   login(credentials:any){
@@ -41,5 +37,9 @@ export class AccountService {
     },error => {
       this.snackBar.open("Im sorry, there was a problem created the account.")
     })
+  }
+
+  logout(){
+    sessionStorage.removeItem('token')
   }
 }
