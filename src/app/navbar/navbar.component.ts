@@ -13,6 +13,10 @@ export class NavbarComponent implements OnInit {
     this.accountService.logout();
   }
 
+  move_out(){
+    this.accountService.moveOut();
+  }
+
   constructor(private accountService:AccountService) { }
 
   ngOnInit(): void {

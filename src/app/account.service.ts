@@ -35,6 +35,16 @@ export class AccountService {
 
   }
 
+
+  moveOut(){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+    })
+    this.http.post(`${environment.BASE_URL}/hood/move_out/`,1,{"headers":headers}).subscribe(response => {
+      this.snackBar.open("You are now no longer a member of the neighbourhood","See you")
+    })
+  }
+
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}/login`,credentials).subscribe(response=>{
       sessionStorage.setItem('token',response['token'])
