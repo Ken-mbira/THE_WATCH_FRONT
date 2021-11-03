@@ -27,7 +27,6 @@ export class NewHoodComponent implements OnInit {
   ngOnInit(): void {
     this.accountService.allHoods().subscribe(response => {
       this.hoods = response
-      console.log(this.hoods)
     },error =>{
       console.log(error)
     })

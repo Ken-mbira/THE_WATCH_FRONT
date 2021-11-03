@@ -8,13 +8,13 @@ import { AccountService } from '../account.service';
   styleUrls: ['./hood.component.css']
 })
 export class HoodComponent implements OnInit {
-  profile:any
+  hood:any
 
   constructor(private accountService:AccountService) { }
 
   ngOnInit(): void {
     this.accountService.getProfile().subscribe(response => {
-      this.profile = response['neighbourhood']
+      this.hood = response['neighbourhood']
     },error =>{
       console.log(error)
     })
