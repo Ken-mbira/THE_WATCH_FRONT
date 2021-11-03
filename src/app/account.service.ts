@@ -17,7 +17,22 @@ export class AccountService {
     let headers = new HttpHeaders({
       'Authorization':`Token ${sessionStorage.getItem('token')}`
     })
-    return this.http.get(`${environment.BASE_URL}/profile`,{'headers':headers})
+    return this.http.get(`${environment.BASE_URL}/hood/myhood`,{'headers':headers})
+  }
+
+  allHoods(){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}/hood/`,{"headers":headers})
+  }
+
+  joinHood(id:number){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+    })
+    return this.http.post(`${environment.BASE_URL}/hood/join_hood/${id}`,id,{"headers":headers})
+
   }
 
   login(credentials:any){

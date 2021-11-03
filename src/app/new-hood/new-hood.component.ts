@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-new-hood',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewHoodComponent implements OnInit {
 
-  constructor() { }
+  hoods:any
+
+  constructor(private accountService:AccountService,private snackBar:MatSnackBar) { }
+
+  joinHood(id:number){
+    this.accountService.joinHood(id).subscribe(response => {
+      this.snackBar.open("You have successfully joined the hood,","Congratulations")
+      this.ngOnInit();
+    },error=>{
+      console.log(error)
+    })
+
+  }
 
   ngOnInit(): void {
+    this.accountService.allHoods().subscribe(response => {
+      this.hoods = response
+      console.log(this.hoods)
+    },error =>{
+      console.log(error)
+    })
   }
 
 }
