@@ -6,12 +6,14 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { User } from './user';
 
+import { AuthService } from './auth.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  constructor(private http: HttpClient,private snackBar:MatSnackBar,private route:Router) { }
+  constructor(private http: HttpClient,private snackBar:MatSnackBar,private route:Router,private authService:AuthService) { }
 
   getProfile(){
     let headers = new HttpHeaders({
@@ -48,6 +50,7 @@ export class AccountService {
   login(credentials:any){
     this.http.post(`${environment.BASE_URL}/login`,credentials).subscribe(response=>{
       sessionStorage.setItem('token',response['token'])
+      this.authService.authentication(true)
       this.snackBar.open(`Welcome back ${credentials.get('username')}`,"Thanks")
       this.route.navigate(['myhood'])
     },error=>{
@@ -66,6 +69,7 @@ export class AccountService {
 
   logout(){
     sessionStorage.removeItem('token')
+    this.authService.authentication(false)
   }
 
   getLocations(){

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AccountService } from '../account.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,8 @@ import { AccountService } from '../account.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  isAuthenticated:boolean;
 
   logout(){
     this.accountService.logout();
@@ -17,9 +20,10 @@ export class NavbarComponent implements OnInit {
     this.accountService.moveOut();
   }
 
-  constructor(private accountService:AccountService) { }
+  constructor(private accountService:AccountService,private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.authService.currentStatus.subscribe(status => this.isAuthenticated = status)
   }
 
 }
