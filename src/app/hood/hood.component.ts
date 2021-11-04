@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HoodComponent implements OnInit {
   hood:any
+  businesses:any;
   cloudinaryUrl = environment.CLOUDINARY_URL
 
   constructor(private accountService:AccountService) { }
@@ -17,6 +18,13 @@ export class HoodComponent implements OnInit {
   ngOnInit(): void {
     this.accountService.getProfile().subscribe(response => {
       this.hood = response['neighbourhood']
+      
+      this.accountService.getBusinesses(this.hood.id).subscribe(response => {
+        this.businesses = response['businesses']
+      },error => {
+        console.log(error)
+      })
+
     },error =>{
       console.log(error)
     })

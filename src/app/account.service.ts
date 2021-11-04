@@ -83,4 +83,11 @@ export class AccountService {
      this.snackBar.open("Congratulations, the neighbourhood was created successfully!","Thank you",{duration:3000})
    })
   }
+
+  getBusinesses(pk){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      })
+     return this.http.get(`${environment.BASE_URL}/hood/business/${pk}`,{"headers":headers})
+  }
 }

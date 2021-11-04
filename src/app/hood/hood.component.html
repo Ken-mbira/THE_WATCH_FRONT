@@ -38,31 +38,15 @@
                 </div>
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" *ngFor="let business of businesses">
                             <div class="card mb-3">
-                                <img src="../../assets/s-migaj-Yui5vfKHuzs-unsplash.jpg" class="card-img-top" alt="...">
+                                <img src="{{cloudinaryUrl}}{{business['image']}}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Bidii carwash</h5>
-                                    <p class="card-text">We deal in making sure your car is sparkling clean</p>
-                                    <p class="card-text"><small class="text-muted">Serving the neighbourhood since 1919</small></p>
+                                    <h5 class="card-text">{{business.name}}</h5>
                                 </div>
                                 <div class="card-footer">
-                                    <p>Owner: name of user</p>
-                                    <p>Get in touch: o712345678</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <img src="../../assets/s-migaj-Yui5vfKHuzs-unsplash.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Bidii carwash</h5>
-                                    <p class="card-text">We deal in making sure your car is sparkling clean</p>
-                                    <p class="card-text"><small class="text-muted">Serving the neighbourhood since 1919</small></p>
-                                </div>
-                                <div class="card-footer">
-                                    <p>Owner: name of user</p>
-                                    <p>Get in touch: o712345678</p>
+                                    <p>Owner: {{business.owner.username}}</p>
+                                    <p>Get in touch: {{business.owner.email}}</p>
                                 </div>
                             </div>
                         </div>
