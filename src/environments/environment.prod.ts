@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  CLOUDINARY_URL:'https://res.cloudinary.com/duykqvfcr/'
 };

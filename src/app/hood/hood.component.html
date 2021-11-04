@@ -2,7 +2,7 @@
     <app-new-hood *ngIf="!hood"></app-new-hood>
     <div class="row" *ngIf="hood">
         <div class="col-md-4">
-            <img class="img-fluid img-thumbnail" src="../../assets/s-migaj-Yui5vfKHuzs-unsplash.jpg">
+            <img class="img-fluid img-thumbnail" src="{{cloudinaryUrl}}{{hood['image']}}">
             <h2>{{hood['name']}}</h2>
             <h4 class="text-muted">{{hood['slogan']}}</h4>
             <small class="text-muted">Created on {{hood['created_at'] | date}} by {{hood['admin']['username']}}</small>

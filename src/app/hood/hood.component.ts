@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AccountService } from '../account.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-hood',
@@ -9,6 +10,7 @@ import { AccountService } from '../account.service';
 })
 export class HoodComponent implements OnInit {
   hood:any
+  cloudinaryUrl = environment.CLOUDINARY_URL
 
   constructor(private accountService:AccountService) { }
 
