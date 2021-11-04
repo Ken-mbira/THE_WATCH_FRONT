@@ -90,4 +90,11 @@ export class AccountService {
       })
      return this.http.get(`${environment.BASE_URL}/hood/business/${pk}`,{"headers":headers})
   }
+
+  getResidents(pk){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      })
+     return this.http.get(`${environment.BASE_URL}/hood/myhood/${pk}`,{"headers":headers})
+  }
 }

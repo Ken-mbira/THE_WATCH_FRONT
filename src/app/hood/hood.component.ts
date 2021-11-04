@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 export class HoodComponent implements OnInit {
   hood:any
   businesses:any;
+  residents:any;
   cloudinaryUrl = environment.CLOUDINARY_URL
 
   constructor(private accountService:AccountService) { }
@@ -21,6 +22,13 @@ export class HoodComponent implements OnInit {
       
       this.accountService.getBusinesses(this.hood.id).subscribe(response => {
         this.businesses = response['businesses']
+      },error => {
+        console.log(error)
+      })
+
+      this.accountService.getResidents(this.hood.id).subscribe(response => {
+        this.residents = response['users']
+        console.log(this.residents)
       },error => {
         console.log(error)
       })

@@ -53,9 +53,8 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
-                    <div class="d-flex align-items-center">
-                        <img src="../../assets/s-migaj-Yui5vfKHuzs-unsplash.jpg" class="rounded" width="100px">
-                        <p style="font-size:4vmin" class="m-3">Name of member</p>
+                    <div class="d-flex align-items-center" *ngFor="let resident of residents">
+                        <p style="font-size:4vmin" class="m-3">{{resident.username}}</p>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
