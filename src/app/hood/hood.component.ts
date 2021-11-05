@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AccountService } from '../account.service';
 import { environment } from 'src/environments/environment';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-hood',
@@ -15,7 +16,15 @@ export class HoodComponent implements OnInit {
   occurences:any;
   cloudinaryUrl = environment.CLOUDINARY_URL
 
-  constructor(private accountService:AccountService) { }
+  postEvent(event:FormData){
+    this.accountService.postEvent(event,this.hood['id']).subscribe(response => {
+      this.snackBar.open("Congratulations, the event was posted successfully!","Thank you",{duration:3000})
+      this.ngOnInit()
+    },error => {
+     this.snackBar.open("There was a problem posting the event","Sorry",{duration:3000})
+    })
+  }
+  constructor(private accountService:AccountService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.accountService.getProfile().subscribe(response => {

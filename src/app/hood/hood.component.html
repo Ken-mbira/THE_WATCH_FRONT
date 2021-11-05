@@ -31,7 +31,7 @@
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    <app-event [hood]="hood"></app-event>
+                                    <app-event [hood]="hood" (formSubmitEvent)="postEvent($event)"></app-event>
                                 </div>
                             </div>
                         </div>

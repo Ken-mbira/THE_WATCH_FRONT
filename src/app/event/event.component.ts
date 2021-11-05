@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -25,22 +25,21 @@ export class EventComponent implements OnInit {
 
   event_types:any;
 
-  postEvent(){
-    let form = new FormData()
-    form.append('type',this.event.type)
-    form.append('name',this.event.name)
-    form.append('description',this.event.description)
-    form.append('image_description',this.event.image_description)
+  form = new FormData()
 
-    this.accountService.postEvent(form,this.hood['id']).subscribe(response => {
-      this.snackBar.open("Congratulations, the event was posted successfully!","Thank you",{duration:3000})
-      this.event.name = ""
-      this.event.description = ""
-      this.event.image_description = ""
-      this.event.type=""
-    },error => {
-     this.snackBar.open("There was a problem posting the event","Sorry",{duration:3000})
-    })
+  @Output() formSubmitEvent = new EventEmitter<FormData>();
+
+  postEvent(){
+    this.form.append('type',this.event.type)
+    this.form.append('name',this.event.name)
+    this.form.append('description',this.event.description)
+    this.form.append('image_description',this.event.image_description)
+
+    this.formSubmitEvent.emit(this.form)
+    this.event.type = ""
+    this.event.name = ""
+    this.event.description = ""
+    this.event.image_description = ""
   }
 
   ngOnInit(): void {
