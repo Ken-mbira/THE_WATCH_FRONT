@@ -36,14 +36,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card mb-2" *ngFor="let event of occurences">
                         <div class="card-header">
-                            Yesterday 12:30pm
+                            {{event['reported_at'] | date}}
                         </div>
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
-                                <p style="font-size:3vmin" class="mb-3">A well-known quote, contained in a blockquote element.</p>
-                                <footer class="blockquote-footer"><cite title="Source Title">Certain user</cite></footer>
+                                <p style="font-size:3vmin" class="mb-3">{{event['description']}}</p>
+                                <footer class="blockquote-footer"><cite title="Source Title">{{event['reporter']['username']}}</cite></footer>
                             </blockquote>
                         </div>
                     </div>

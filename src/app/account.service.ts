@@ -93,6 +93,13 @@ export class AccountService {
      return this.http.post(`${environment.BASE_URL}/hood/occurence/${pk}`,body,{"headers":headers})
   }
 
+  getEvents(pk:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      })
+     return this.http.get(`${environment.BASE_URL}/hood/occurence/${pk}`,{"headers":headers})
+  }
+
   createHood(hood:any){
     let headers = new HttpHeaders({
     'Authorization':`Token ${sessionStorage.getItem('token')}`

@@ -12,6 +12,7 @@ export class HoodComponent implements OnInit {
   hood:any
   businesses:any;
   residents:any;
+  occurences:any;
   cloudinaryUrl = environment.CLOUDINARY_URL
 
   constructor(private accountService:AccountService) { }
@@ -29,6 +30,13 @@ export class HoodComponent implements OnInit {
       this.accountService.getResidents(this.hood.id).subscribe(response => {
         this.residents = response['users']
         console.log(this.residents)
+      },error => {
+        console.log(error)
+      })
+
+      this.accountService.getEvents(this.hood.id).subscribe(response =>{
+        this.occurences = response
+        console.log(this.occurences)
       },error => {
         console.log(error)
       })
