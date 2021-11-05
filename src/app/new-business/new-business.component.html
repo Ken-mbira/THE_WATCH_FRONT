@@ -1,0 +1,19 @@
+<form #businessForm='ngForm' (ngSubmit)="registerBusiness()">
+    <mat-form-field appearance="fill">
+        <mat-label>Choose the service you are offering</mat-label>
+        <mat-select [(ngModel)]="chosenService" (ngSubmit)="registerBusiness()" name="food">
+            <mat-option *ngFor="let service of services" [value]="service['id']">{{service['name']}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="mb-3">
+        <input class="form-control" name="name" [(ngModel)]="name" type="text" placeholder="Enter the name of the business">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="image">Enter an image of your business</label>
+        <input class="form-control" (change)="onImageChange($event)" type="file" id="image">
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-outline-primary" type="submit">Register</button>
+    </div>
+    <hr>
+</form>

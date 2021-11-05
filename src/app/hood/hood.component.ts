@@ -24,6 +24,11 @@ export class HoodComponent implements OnInit {
      this.snackBar.open("There was a problem posting the event","Sorry",{duration:3000})
     })
   }
+
+  registerBusiness(event:FormData){
+    this.accountService.registerBusiness(event)
+    this.ngOnInit()
+  }
   constructor(private accountService:AccountService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {

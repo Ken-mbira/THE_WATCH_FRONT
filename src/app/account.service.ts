@@ -100,6 +100,24 @@ export class AccountService {
      return this.http.get(`${environment.BASE_URL}/hood/occurence/${pk}`,{"headers":headers})
   }
 
+  getServices(){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      })
+     return this.http.get(`${environment.BASE_URL}/hood/services/`,{"headers":headers})
+  }
+
+  registerBusiness(body:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      })
+     this.http.post(`${environment.BASE_URL}/hood/business/`,body,{"headers":headers}).subscribe(response => {
+       this.snackBar.open("Congratulations, the business was registered successfully!","Thank you",{duration:3000})
+     },error => {
+      this.snackBar.open("There was a problem registering your business","Sorry",{duration:3000})
+     })
+  }
+
   createHood(hood:any){
     let headers = new HttpHeaders({
     'Authorization':`Token ${sessionStorage.getItem('token')}`

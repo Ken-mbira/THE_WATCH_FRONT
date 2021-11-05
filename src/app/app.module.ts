@@ -17,6 +17,7 @@ import { NewHoodComponent } from './new-hood/new-hood.component';
 import { CreateHoodComponent } from './create-hood/create-hood.component';
 import { BusinessComponent } from './business/business.component';
 import { EventComponent } from './event/event.component';
+import { NewBusinessComponent } from './new-business/new-business.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { EventComponent } from './event/event.component';
     CreateHoodComponent,
     BusinessComponent,
     EventComponent,
+    NewBusinessComponent,
   ],
   imports: [
     BrowserModule,
