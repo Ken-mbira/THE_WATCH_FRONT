@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { HoodComponent } from './hood/hood.component';
 import { NewHoodComponent } from './new-hood/new-hood.component';
 import { CreateHoodComponent } from './create-hood/create-hood.component';
+import { BusinessComponent } from './business/business.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CreateHoodComponent } from './create-hood/create-hood.component';
     HoodComponent,
     NewHoodComponent,
     CreateHoodComponent,
+    BusinessComponent,
   ],
   imports: [
     BrowserModule,

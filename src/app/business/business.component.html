@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngIf="businesses">
+        <div class="card" style="width: 18rem;" *ngFor="let business of businesses">
+            <img src="{{cloudinaryUrl}}{{business['image']}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{business.name}}</p>
+                <p>Contact : {{business.owner.email}}</p>
+            </div>
+            <div class="card-footer">
+                <p class="text-muted">Owned by {{business.owner.username}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!businesses">
+        <h3>There is no business in your neighbourhood under that name</h3>
+    </div>
+</div>

@@ -5,11 +5,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HoodComponent } from './hood/hood.component';
 import { CreateHoodComponent } from './create-hood/create-hood.component';
+import { BusinessComponent } from './business/business.component';
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'myhood', component: HoodComponent},
-  { path: 'newhood', component: CreateHoodComponent}
+  { path: 'newhood', component: CreateHoodComponent},
+  { path: 'business', component: BusinessComponent}
 ];
 
 @NgModule({

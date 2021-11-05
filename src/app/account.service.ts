@@ -101,4 +101,11 @@ export class AccountService {
       })
      return this.http.get(`${environment.BASE_URL}/hood/myhood/${pk}`,{"headers":headers})
   }
+
+  searchBusiness(searchTerm){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      })
+     return this.http.get(`${environment.BASE_URL}/hood/search/${searchTerm}`,{"headers":headers})
+  }
 }
