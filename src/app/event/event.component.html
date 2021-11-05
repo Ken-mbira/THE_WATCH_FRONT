@@ -1,0 +1,23 @@
+<form #eventForm="ngForm" (ngSubmit)="postEvent()">
+    <div class="mb-2">
+        <mat-form-field appearance="fill">
+            <mat-label>Choose the type of event</mat-label>
+            <mat-select [(ngModel)]="event.type" name="food">
+                <mat-option *ngFor="let type of event_types" [value]="type['id']">{{type['name']}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="mb-2">
+        <input type="text" class="form-control form-control-sm" placeholder="Enter the title of the event..." name="name" [(ngModel)]="event.name">
+    </div>
+    <div class="mb-2">
+        <input type="text" class="form-control form-control-sm" placeholder="Enter the a description of the event ..." name="description" [(ngModel)]="event.description">
+    </div>
+    <div class="mb-2">
+        <label class="form-label" for="image">Enter an image description of the event</label>
+        <input type="file" class="form-control form-control-sm" name="image" (change)="onImageChange($event)">
+    </div>
+    <div class="mb-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

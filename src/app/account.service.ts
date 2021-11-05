@@ -79,6 +79,20 @@ export class AccountService {
     return this.http.get(`${environment.BASE_URL}/hood/locations/`,{"headers":headers})
   }
 
+  getEventTypes(){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+    })
+    return this.http.get(`${environment.BASE_URL}/hood/event_types/`,{"headers":headers})
+  }
+
+  postEvent(body:any,pk:any){
+    let headers = new HttpHeaders({
+      'Authorization':`Token ${sessionStorage.getItem('token')}`
+      })
+     return this.http.post(`${environment.BASE_URL}/hood/occurence/${pk}`,body,{"headers":headers})
+  }
+
   createHood(hood:any){
     let headers = new HttpHeaders({
     'Authorization':`Token ${sessionStorage.getItem('token')}`
